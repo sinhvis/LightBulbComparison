@@ -40,3 +40,14 @@ all of the section elements because of the clear both
 */ 
 #myCalculator main::after { content: ''; display: block; clear: both; }
 
+/* For all sections we've already set the 
+background repeat position and size, 
+so we only need to set the color of the background and image*/
+/* using red for incadescent */
+/* red for halogen */
+/* gold for cfl */
+/* green for led */
+#myCalculator main section.inc { background-color: #ba2d2d; background-image: url(images/bulb_inc.svg); }
+#myCalculator main section.hal { background-color: #de6615; background-image: url(images/bulb_hal.svg); }
+#myCalculator main section.cfl { background-color: #efc20f; background-image: url(images/bulb_cfl.svg); }
+#myCalculator main section.led { background-color: #36b23c; background-image: url(images/bulb_led.svg); }
