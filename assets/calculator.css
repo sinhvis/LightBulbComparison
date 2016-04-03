@@ -88,3 +88,20 @@ Google Fonts */
 follows another paragraph element */
 /* Reset the font size, and set font-weight back to 300 */
 #myCalculator main p + p { font-size: 1em; font-weight: 300; }
+
+/* literally adding a w after every paragraph element inside
+the paragraph element */
+#myCalculator main p::after { content:'w'; }
+
+/* put a $ before content in the second paragraph element */
+#myCalculator main p + p::before { content:'$'; }
+
+/* following will override pseudo element added after
+paragraph element inside of main (2 lines above)
+because this CSS rule is more specific */
+/* Adds per year after amount
+using color semi-transparent white
+255, 255, 255, .5 : .5 means 50% transparent
+padding-left: 4px adds 4 pixels to the left
+*/
+#myCalculator main p + p::after { content:'per year'; color: rgba(255,255,255,.5); padding-left: 4px; }
