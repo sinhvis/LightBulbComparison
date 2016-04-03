@@ -1,0 +1,42 @@
+/* CSS Document */
+
+/* Brings in Google font */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700|Open+Sans+Condensed:700);
+
+#myCalculator { margin: 0; padding: 0; font-size: 16px; font-family: 'Open Sans', sans-serif; font-weight: 300; line-height: 24px; max-width: 800px; }
+
+/* #444 = medium gray */
+#myCalculator main { background-color: #444; }
+
+/* #fff = white */
+/* center on the x and 5px on the y */
+/* background-size: proportionately scaled size for each of the light bulb graphics */
+#myCalculator main section {
+	width: 25%;
+	float: left;
+	text-align: center;
+	padding-top: 110px;
+	color: #fff;
+	background-repeat: no-repeat;
+	background-position: center 5px;
+	background-size: 63px 100px;
+}
+
+/* have section elements inside the main element with 
+the float properties, need to clear floats in main section */
+
+/* after is a pseudo element 
+need to give after some clear properties */
+/* to get psuedo element to show up,
+need to give it some content */
+/* without content property, the display type
+and clear won't show up or take effect.
+That is why, set display to block and clear to both
+*/
+/* This way if there were any content inside 
+main area outside of the sections, 
+the main container will extend to encompass
+all of the section elements because of the clear both
+*/ 
+#myCalculator main::after { content: ''; display: block; clear: both; }
+
