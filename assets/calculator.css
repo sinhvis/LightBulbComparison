@@ -105,3 +105,38 @@ using color semi-transparent white
 padding-left: 4px adds 4 pixels to the left
 */
 #myCalculator main p + p::after { content:'per year'; color: rgba(255,255,255,.5); padding-left: 4px; }
+
+/* CSS rules to style the form area */
+/* background-color: set to black */
+/* margin set to 0 on all 4 sides
+padding: 10px top and bottom and 0px right and left */
+#myCalculator form {
+	background-color: #000;
+	margin: 0; padding: 10px 0px ;
+}
+
+/* target break tags added before */
+/* on larger screens want break tags to be hidden, 
+or set display to none */
+#myCalculator form br { display: none; }
+
+/* Targeting div elements inside of the form elements
+set color to white 
+width to 33%
+set float property so these will line up horizontally
+text-align to center
+padding 10px for the top and 0 on the right 5px for the bottom and 0 on the left */
+#myCalculator form > div {
+	color: #fff;
+	width: 33%;
+	float: left;
+	text-align: center;
+	padding: 10px 0 5px 0;
+}
+
+/* Rule to clear the floats within the form element
+Another pseudo element
+set content to an empty string
+set display type to block
+clear property of both */
+#myCalculator form::after { content:''; display: block; clear: both; }
