@@ -205,6 +205,7 @@ still be drawn
 #myCalculator form select::-ms-expand { display: none; }
 
 /* Adjusting the main area for small screens
+   ------------------------------------------
 add a media query and pick a size of 500px
 use max-width 500px
 all rules inside media query will only take effect if
@@ -231,7 +232,9 @@ color set to full-white, were using a semi-transparent white since when font siz
 */
 
 /* -----------------------------------------------------
+
 Adjusting the form area for small screens
+------------------------------------------
 This still needs to be done inside the media query
 target h4 elements inside the form area,
 font-size to 1.1em and margin to 0 on all four sides
