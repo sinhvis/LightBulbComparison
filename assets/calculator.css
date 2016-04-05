@@ -203,3 +203,63 @@ the arrows that IE puts on the select menu will
 still be drawn
 */
 #myCalculator form select::-ms-expand { display: none; }
+
+/* Adjusting the main area for small screens
+add a media query and pick a size of 500px
+use max-width 500px
+all rules inside media query will only take effect if
+the browser is less than 500px wide
+font-size 15px will affect all elements inside the main 
+myCalculator container
+then target the section elements inside the main element:
+these are the containers that are holding all of the lightbulb graphics:
+setting background-size to 40px for width and 71px for height.  Since height is now only 71px, 
+setting padding-top to 8px
+then target h4 elements,
+set margin to 0, font-size to .75em, and 
+letter-spacing to 0 to take up less horizontal room
+then target paragraph elements: this targets the wattage label
+font-size to 1.1em
+then target the price,
+font-size to 1em
+then target the pseudo class that was put inside of that paragraph element if it follows another paragraph element.  This is for per-year,
+after targets the pseudo element
+want per-year show up on its own line, so
+change display type to block,
+margin-top to -10px to decrease space between per year and price itself,
+color set to full-white, were using a semi-transparent white since when font size gets a little smaller want to make sure type color is more readable on small screens.
+*/
+
+/* -----------------------------------------------------
+Adjusting the form area for small screens
+This still needs to be done inside the media query
+target h4 elements inside the form area,
+font-size to 1.1em and margin to 0 on all four sides
+target form p,
+bring line-height down to 14px
+target break tags added in the form area,
+want to control where the break points are happening,
+set the display types to inline
+target the input, need to target the type of number,
+for this, need to use type=number,
+bring width down to 30px and font-size down to .8em
+target select element,
+bring font size down, bring font-size down to .8em
+*/
+@media screen and (max-width:500px){
+	/* for main area */
+	#myCalculator { font-size: 15px; }
+	#myCalculator main section { background-size: 45px 71px; padding-top: 80px; }
+	#myCalculator main h4 { margin: 0; font-size: .75em; letter-spacing: 0; }
+	#myCalculator main p { font-size: 1.1em; }
+	#myCalculator main p + p { font-size: 1em; }
+	#myCalculator main p + p::after { display: block; margin-top: -10px; color: #fff; }
+
+
+	/* for form area */
+	#myCalculator form h4 { font-size: 1.1em; margin: 0; }
+	#myCalculator form p { font-size: .8em; line-height: 14px; }
+	#myCalculator form br { display: inline; }
+	#myCalculator form input[type=number] { width: 30px; font-size: .8em; }
+	#myCalculator form select { font-size: .8em; }
+}
