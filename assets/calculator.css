@@ -140,3 +140,66 @@ set content to an empty string
 set display type to block
 clear property of both */
 #myCalculator form::after { content:''; display: block; clear: both; }
+
+/* targeting h4 headings inside the form area
+color light grey
+margin 0 on top, 0 on right, -5px on the bottom and 0 on the left */
+#myCalculator form h4 {
+	color: #aaa;
+	margin: 0 0 -5px 0; font-size: 1.5em; font-weight: 300;
+}
+
+/* targeting paragraph elements 
+color darker grey
+margin 0 on top 0 on right 6px on the bottom, 0 on the left
+font-size .9em */
+#myCalculator form p { color: #888; margin: 0 0 6px 0; font-size: .9em; }
+
+/* Style input fields
+Using an attribute selector in CSS [type=number] */
+#myCalculator form input[type=number] {
+	width: 50px; text-align: left; font-size: 1em;
+}
+
+/* focus on the select menu
+cannot style the pop-up that comes up when somebody clicks on the select element,
+but we can style the element itself
+take away the default browser style, and put in our own colors and artwork.
+appearance removes the default browser styling or design
+a lot of browsers are not supporting this natively.
+-webkit-appearance targets Chrome and Safari
+-moz-appearance targets Mozilla (Firefox)
+-ms-appearance targets Microsoft (Internet Explorer)
+-o-appearance targets Opera
+When browsers support this natively, we can keep the appearance set to none, and will be able to remove all the browser flags.
+background white use the file from images/icons_arrow.svg
+	no-repeat
+	position x property right
+	position y property 6px
+background-size width 30 px height 20px
+padding 3px top 30 px right 3px bottom and 5px on the left
+*/
+/* type style inside of select menu matches the 
+type style inside the input fields
+Custom arrows have been brought in with the background property
+default styling of browser for pop-up menu that comes up when clicking select */
+#myCalculator form select {
+	font-size: 1em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	background: #fff url(images/icons_arrows.svg) no-repeat right 6px;
+	background-size: 30px 20px;
+	padding: 3px 30px 3px 5px;
+}
+
+/* Need one more rule specific to IE
+pseudo element that will only be applied to IE
+even though we set appearance to none, and
+ms-appearance to none,
+the arrows that IE puts on the select menu will 
+still be drawn
+*/
+#myCalculator form select::-ms-expand { display: none; }
