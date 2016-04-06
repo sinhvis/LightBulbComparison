@@ -16,6 +16,12 @@
 	// $scope allows passing variables between HTML and JavaScript
 	app.controller('CalculatorController', ['$scope', function($scope) {
 
+		// Array holds all possible lumen options a user can select from
+		// $scope service used to share variables between JavaScript file and the HTML
+		$scope.lumen_options = [375, 600, 900, 1125, 1600] ;
+
+		// Stores the first default value want the calculator to use when the page is loaded, as well as whatever the user selects in our select menu.  Need to make sure to pick a starting value that matches one of the values in the array.
+		$scope.current_lumens = 600 ;
 	}]) ;
 })() ;
 
