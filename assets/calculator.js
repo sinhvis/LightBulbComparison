@@ -22,6 +22,15 @@
 
 		// Stores the first default value want the calculator to use when the page is loaded, as well as whatever the user selects in our select menu.  Need to make sure to pick a starting value that matches one of the values in the array.
 		$scope.current_lumens = 600 ;
+
+		// kWh and number of hours of usage per day
+		$scope.current_cost = 12 ;
+		$scope.current_hours = 3 ;
+		// another variable for number of days
+		// when calculations are created,
+		// tell people how much money they saved based
+		// on the whole year.
+		$scope.total_days = 365 ;
 	}]) ;
 })() ;
 
