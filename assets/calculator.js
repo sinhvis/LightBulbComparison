@@ -39,6 +39,15 @@
 		$scope.led_conversion = .0125 ;
 
 		// need to create a custom function inside the controller to perform the calculations when the form changes.
+
+		// Technically a function is also a variable
+		$scope.calculate = function() {
+		}
+		// following function is on the scope, so this function can be run from the html
+		$scope.calculate() ;
+
+		// need to set up html file to run calculate function when certain items on page change.
+
 	}]) ;
 })() ;
 
