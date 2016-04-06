@@ -31,6 +31,14 @@
 		// tell people how much money they saved based
 		// on the whole year.
 		$scope.total_days = 365 ;
+
+		// Conversion rates for different types of lightbulbs
+		$scope.inc_conversion = .0625 ;
+		$scope.hal_conversion = .0450 ;
+		$scope.cfl_conversion = .0146 ;
+		$scope.led_conversion = .0125 ;
+
+		// need to create a custom function inside the controller to perform the calculations when the form changes.
 	}]) ;
 })() ;
 
