@@ -47,6 +47,23 @@
 			$scope.hal_wattage = ($scope.current_lumens * $scope.hal_conversion).toFixed(1) ;
 			$scope.cfl_wattage = ($scope.current_lumens * $scope.cfl_conversion).toFixed(1) ;
 			$scope.led_wattage = ($scope.current_lumens * $scope.led_conversion).toFixed(1) ;
+
+			// Conditional statement to keep users from entering more than 24 hours
+			// if more than 24 hours is entered, it is set back to 24
+			if( $scope.current_hours > 24 ) {
+				$scope.current_hours = 24 ;
+			}
+
+			// temporary variable where calculate the current number of hours times the total number of days, gives the total number of hours.  not going to use this anywhere less..
+			var total_hours = $scope.total_days * $scope.current_hours ;
+
+			// convert number is cents field to actual cents
+			var cost = $scope.current_cost / 100 ;
+
+			$scope.inc_cost = ((($scope.inc_wattage * total_hours) / 1000) * cost).toFixed(2) ;
+			$scope.hal_cost = ((($scope.hal_wattage * total_hours) / 1000) * cost).toFixed(2) ;
+			$scope.cfl_cost = ((($scope.cfl_wattage * total_hours) / 1000) * cost).toFixed(2) ;
+			$scope.led_cost = ((($scope.led_wattage * total_hours) / 1000) * cost).toFixed(2) ;
 		}
 		// following function is on the scope, so this function can be run from the html
 		$scope.calculate() ;
