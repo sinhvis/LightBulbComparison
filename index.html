@@ -16,7 +16,7 @@
 			<section class="inc">
 				<div>
 					<h4>Incadescent</h4>
-					<p>100.0</p>
+					<p>{{ inc_wattage }}</p>
 					<p>13.14</p>
 				</div>
 			</section>
@@ -48,7 +48,7 @@
 				<h4>Lumens</h4>
 				<p>Brightness <br>of bulb</p>
 				<!-- loop through all the items in array and create an  option element inside the select element for each item -->
-				<select ng-model="current_lumens" ng-options="o as o for o in lumen_options">
+				<select ng-change="calculate()" ng-model="current_lumens" ng-options="o as o for o in lumen_options">
 
 				</select>
 			</div>

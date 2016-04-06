@@ -42,6 +42,8 @@
 
 		// Technically a function is also a variable
 		$scope.calculate = function() {
+			// toFixed(1) changes the number of decimal places to 1
+			$scope.inc_wattage = ($scope.current_lumens * $scope.inc_conversion).toFixed(1) ;
 		}
 		// following function is on the scope, so this function can be run from the html
 		$scope.calculate() ;
